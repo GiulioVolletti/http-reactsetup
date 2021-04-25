@@ -9,7 +9,7 @@ class FullPost extends Component {
     }
     componentDidUpdate(){
         if (this.props.id) {
-            if(!this.state.loaderPost || this.state.loaderPost && this.state.loaderPost.id !== this.props.id) {
+            if((!this.state.loaderPost || this.state.loaderPost) && this.state.loaderPost.id !== this.props.id) {
                 axios.get('/posts/' + this.props.id)
                 .then(response => {
                    // console.log(response.data)
